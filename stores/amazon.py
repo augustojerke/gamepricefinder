@@ -11,11 +11,13 @@ class Amazon:
           try: driver.find_element("xpath", "//input[@id='nav-search-submit-button']").click()               
           except: driver.find_element("xpath", "//input[@value='Ir']").click()               
           time.sleep(1)
-          for i in range(1, 3): self.__getProductInfos(driver, i)
+          for i in range(1, 4): self.__getProductInfos(driver, i)
                
      def __getProductInfos(self, driver: webdriver.Firefox, i):
           p = Product()
           p.urlImage = driver.find_element("xpath", f"//img[@data-image-index='{i}']").get_attribute("src")
           p.title = driver.find_elements("xpath", "//span[@class='a-size-base-plus a-color-base a-text-normal']")[i-1].text
+          p.newPrice = driver.find_elements("xpath", "//span[@class='a-price-whole']")[i-1].text
+          p.oldPrice = ""
           p.printProducts()
           print("----------")         

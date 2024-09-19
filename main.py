@@ -8,7 +8,7 @@ import time
 import json
 
 opt = FirefoxOptions()
-# opt.add_argument("--headless")
+#opt.add_argument("--headless")
 opt.binary_location = '/geckodriver-v0.35.0-win32/geckodriver'
 
 searchParam = "Playstation 5"
