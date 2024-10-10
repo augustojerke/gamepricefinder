@@ -20,13 +20,13 @@ class GamePriceFinder:
     
     def searchKabum(self):
         kabum = Kabum()
-        kabum.searchProduct(searchParam, self.driver)
+        kabum.searchProduct(searchParam)
     
-    def searchAmazon(self):
-        amazon = Amazon()
-        amazon.searchProduct(searchParam, self.driver)
+    # def searchAmazon(self):
+    #     amazon = Amazon()
+    #     amazon.searchProduct(searchParam, self.driver)
 
 if __name__ == '__main__':
     gamePriceFinder = GamePriceFinder()
     gamePriceFinder.searchKabum()
-    gamePriceFinder.searchAmazon()
+    # gamePriceFinder.searchAmazon()
